@@ -241,7 +241,7 @@ msgid "ui.battle.new_board"
 msgstr "Ban moi"
 
 msgid "ui.battle.board_hint"
-msgstr "Cham mot o roi cham o canh no de doi cho."
+msgstr "Vuot mot o hoac cham hai o canh nhau de doi cho."
 
 msgid "ui.battle.combo"
 msgstr "COMBO x{combo}"

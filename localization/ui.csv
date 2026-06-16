@@ -78,7 +78,7 @@ ui.battle.skill_2,Skill 2,Ky nang 2
 ui.battle.skill_3,Skill 3,Ky nang 3
 ui.battle.skill_4,Skill 4,Ky nang 4
 ui.battle.new_board,New Board,Ban moi
-ui.battle.board_hint,Tap a tile then an adjacent tile to swap.,Cham mot o roi cham o canh no de doi cho.
+ui.battle.board_hint,Swipe a tile or tap two adjacent tiles to swap.,Vuot mot o hoac cham hai o canh nhau de doi cho.
 ui.battle.combo,COMBO x{combo},COMBO x{combo}
 ui.battle.failed_swap,Failed swap,Doi cho that bai
 ui.battle.invalid_summary,No match: swap reverted and penalty should trigger.,Khong co match: da hoan doi va se kich hoat phat.

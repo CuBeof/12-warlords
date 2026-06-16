@@ -2,6 +2,7 @@ extends Button
 class_name BoardTileView
 
 signal cell_pressed(cell: Vector2i)
+signal cell_swiped(cell: Vector2i, direction: Vector2i)
 
 const BoardTileScript := preload("res://scripts/board/tile.gd")
 
@@ -9,11 +10,36 @@ var cell: Vector2i = Vector2i.ZERO
 var tile: Variant
 var _base_scale := Vector2.ONE
 var _tween: Tween
+var _touch_start := Vector2.ZERO
+var _swipe_sent := false
 
 
 func _ready() -> void:
 	focus_mode = Control.FOCUS_NONE
 	pressed.connect(func() -> void: cell_pressed.emit(cell))
+
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventScreenTouch:
+		var touch := event as InputEventScreenTouch
+		if touch.pressed:
+			_touch_start = touch.position
+			_swipe_sent = false
+		return
+	if event is InputEventScreenDrag:
+		var drag := event as InputEventScreenDrag
+		_try_emit_swipe(drag.position - _touch_start)
+		return
+	if event is InputEventMouseButton:
+		var mouse_button := event as InputEventMouseButton
+		if mouse_button.button_index == MOUSE_BUTTON_LEFT and mouse_button.pressed:
+			_touch_start = mouse_button.position
+			_swipe_sent = false
+		return
+	if event is InputEventMouseMotion:
+		var mouse_motion := event as InputEventMouseMotion
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			_try_emit_swipe(mouse_motion.position - _touch_start)
 
 
 func setup(new_cell: Vector2i, new_tile: Variant, tile_size: float) -> void:
@@ -86,6 +112,18 @@ func _refresh_visuals(selected: bool) -> void:
 	text = _symbol_for_tile(tile)
 	add_theme_color_override(&"font_color", Color("fff8e6") if tile.enhanced else Color("f8f2e8"))
 	add_theme_font_size_override(&"font_size", 24 if tile.enhanced else 22)
+
+
+func _try_emit_swipe(delta: Vector2) -> void:
+	if _swipe_sent or delta.length() < maxf(18.0, custom_minimum_size.x * 0.32):
+		return
+	_swipe_sent = true
+	var direction := Vector2i.ZERO
+	if absf(delta.x) > absf(delta.y):
+		direction.x = 1 if delta.x > 0.0 else -1
+	else:
+		direction.y = 1 if delta.y > 0.0 else -1
+	cell_swiped.emit(cell, direction)
 
 
 func _symbol_for_tile(source: Variant) -> String:

@@ -122,6 +122,7 @@ func _make_tile_view(cell: Vector2i, tile: Variant) -> Variant:
 	view.setup(cell, tile, tile_size)
 	view.position = _cell_position(cell)
 	view.cell_pressed.connect(_on_cell_pressed)
+	view.cell_swiped.connect(_on_cell_swiped)
 	return view
 
 
@@ -141,6 +142,17 @@ func _on_cell_pressed(cell: Vector2i) -> void:
 		model.try_swap(from, cell)
 	else:
 		_select_cell(cell)
+
+
+func _on_cell_swiped(cell: Vector2i, direction: Vector2i) -> void:
+	if _busy:
+		return
+	var target := cell + direction
+	if not model.is_in_bounds(target):
+		return
+	_select_cell(Vector2i(-1, -1))
+	_busy = true
+	model.try_swap(cell, target)
 
 
 func _select_cell(cell: Vector2i) -> void:

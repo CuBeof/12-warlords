@@ -75,24 +75,10 @@ func _build_shell() -> void:
 	quick_battle.pressed.connect(func() -> void: _show_screen(SCREEN_BATTLE))
 	header.add_child(quick_battle)
 
-	var body := HBoxContainer.new()
+	var body := VBoxContainer.new()
 	body.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	body.add_theme_constant_override(&"separation", 14)
+	body.add_theme_constant_override(&"separation", 10)
 	root.add_child(body)
-
-	var nav := VBoxContainer.new()
-	nav.custom_minimum_size.x = 170
-	nav.add_theme_constant_override(&"separation", 8)
-	body.add_child(nav)
-
-	_add_nav_button(nav, SCREEN_MAIN, "ui.nav.home")
-	_add_nav_button(nav, SCREEN_MAP, "ui.nav.map")
-	_add_nav_button(nav, SCREEN_BATTLE, "ui.nav.battle")
-	_add_nav_button(nav, SCREEN_INVENTORY, "ui.nav.inventory")
-	_add_nav_button(nav, SCREEN_SKILLS, "ui.nav.skills")
-	_add_nav_button(nav, SCREEN_SHOP, "ui.nav.shop")
-	_add_nav_button(nav, SCREEN_SETTINGS, "ui.nav.settings")
-	_add_nav_button(nav, SCREEN_ABOUT, "ui.nav.about")
 
 	_content = MarginContainer.new()
 	_content.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -103,12 +89,32 @@ func _build_shell() -> void:
 	_content.add_theme_constant_override(&"margin_bottom", 8)
 	body.add_child(_content)
 
+	var nav_scroll := ScrollContainer.new()
+	nav_scroll.custom_minimum_size.y = 68
+	nav_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	nav_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	body.add_child(nav_scroll)
 
-func _add_nav_button(parent: VBoxContainer, screen_id: StringName, key: String) -> void:
+	var nav := HFlowContainer.new()
+	nav.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	nav.add_theme_constant_override(&"h_separation", 8)
+	nav.add_theme_constant_override(&"v_separation", 8)
+	nav_scroll.add_child(nav)
+
+	_add_nav_button(nav, SCREEN_MAIN, "ui.nav.home")
+	_add_nav_button(nav, SCREEN_MAP, "ui.nav.map")
+	_add_nav_button(nav, SCREEN_BATTLE, "ui.nav.battle")
+	_add_nav_button(nav, SCREEN_INVENTORY, "ui.nav.inventory")
+	_add_nav_button(nav, SCREEN_SKILLS, "ui.nav.skills")
+	_add_nav_button(nav, SCREEN_SHOP, "ui.nav.shop")
+	_add_nav_button(nav, SCREEN_SETTINGS, "ui.nav.settings")
+	_add_nav_button(nav, SCREEN_ABOUT, "ui.nav.about")
+
+
+func _add_nav_button(parent: Control, screen_id: StringName, key: String) -> void:
 	var button := Button.new()
 	button.text = tr(key)
-	button.custom_minimum_size.y = 50
-	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	button.custom_minimum_size = Vector2(116, 50)
 	button.pressed.connect(func() -> void: _show_screen(screen_id))
 	parent.add_child(button)
 	_screen_buttons[screen_id] = button
@@ -304,24 +310,21 @@ func _screen_inventory() -> Control:
 func _screen_battle() -> Control:
 	var panel := _make_panel()
 	var layout := VBoxContainer.new()
-	layout.add_theme_constant_override(&"separation", 12)
+	layout.add_theme_constant_override(&"separation", 10)
 	panel.add_child(layout)
 
 	var top := HBoxContainer.new()
-	top.add_theme_constant_override(&"separation", 12)
+	top.add_theme_constant_override(&"separation", 8)
 	layout.add_child(top)
 	var retreat := Button.new()
 	retreat.text = tr("ui.battle.retreat")
+	retreat.custom_minimum_size = Vector2(96, 48)
 	top.add_child(retreat)
 	top.add_child(_make_combatant("ui.battle.enemy", _palette[&"red"]))
 
-	var middle := HBoxContainer.new()
-	middle.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	middle.add_theme_constant_override(&"separation", 12)
-	layout.add_child(middle)
-	middle.add_child(_make_chat_box())
-	middle.add_child(_make_board())
-	middle.add_child(_make_skill_bar(true))
+	layout.add_child(_make_board())
+	layout.add_child(_make_skill_bar(false))
+	layout.add_child(_make_chat_box())
 
 	layout.add_child(_make_combatant("ui.battle.player", _palette[&"blue"]))
 	return panel
@@ -528,7 +531,7 @@ func _make_bar(color: Color, value: float, label_text: String) -> Control:
 
 func _make_chat_box() -> Control:
 	var panel := _make_section("ui.battle.dialogue")
-	panel.custom_minimum_size.x = 170
+	panel.custom_minimum_size.y = 104
 	_fill_placeholder_rows(panel, ["ui.battle.dialogue_sample"])
 	return panel
 
@@ -538,7 +541,7 @@ func _make_board() -> Control:
 	wrapper.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	wrapper.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var board := BoardViewScript.new()
-	board.tile_size = 50.0
+	board.tile_size = 56.0
 	board.tile_gap = 5.0
 	wrapper.add_child(board)
 	return wrapper
@@ -546,12 +549,13 @@ func _make_board() -> Control:
 
 func _make_skill_bar(vertical: bool) -> Control:
 	var box: BoxContainer = VBoxContainer.new() if vertical else HBoxContainer.new()
-	box.custom_minimum_size.x = 170
+	box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	box.add_theme_constant_override(&"separation", 8)
 	for key in ["ui.battle.skill_1", "ui.battle.skill_2", "ui.battle.skill_3", "ui.battle.skill_4"]:
 		var button := Button.new()
 		button.text = tr(key)
-		button.custom_minimum_size.y = 58
+		button.custom_minimum_size = Vector2(0, 58)
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		box.add_child(button)
 	return box
 
