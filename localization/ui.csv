@@ -1,0 +1,98 @@
+keys,en,vi
+ui.main.title,12 Warlords,12 Lanh Chua
+ui.main.subtitle,Offline match-3 RPG prototype UI with replaceable art slots.,Nguyen mau UI RPG match-3 offline voi cac o asset co the thay sau.
+ui.main.continue,Continue,Tiep tuc
+ui.main.new_game,New Game,Game moi
+ui.main.settings,Settings,Cai dat
+ui.main.about,About,Gioi thieu
+ui.main.preview,Campaign Preview,Xem nhanh chien dich
+ui.nav.home,Home,Trang chinh
+ui.nav.map,Map,Ban do
+ui.nav.battle,Battle,Tran dau
+ui.nav.inventory,Inventory,Tui do
+ui.nav.skills,Skills,Ky nang
+ui.nav.shop,Shop,Cua hang
+ui.nav.settings,Settings,Cai dat
+ui.nav.about,About,Gioi thieu
+ui.placeholder.map,Map art placeholder,O thay asset ban do
+ui.placeholder.hero,Hero portrait placeholder,O thay chan dung nhan vat
+ui.placeholder.enemy,Enemy portrait placeholder,O thay chan dung ke dich
+ui.common.buy,Buy,Mua
+ui.settings.title,Settings,Cai dat
+ui.settings.audio,Audio,Am thanh
+ui.settings.ux,Experience,Trai nghiem
+ui.settings.language,Language & Account,Ngon ngu & tai khoan
+ui.settings.audio_master,Game Audio,Am thanh game
+ui.settings.audio_master_volume,Game Audio Volume,Am luong game
+ui.settings.audio_sfx,Sound Effects,Hieu ung am thanh
+ui.settings.audio_sfx_volume,SFX Volume,Am luong SFX
+ui.settings.audio_music,Background Music,Nhac nen
+ui.settings.audio_music_volume,Music Volume,Am luong nhac
+ui.settings.effect_speed,Effect Speed,Toc do hieu ung
+ui.settings.show_hints,Show Hints,Hien goi y
+ui.settings.guidance,In-game Guidance,Huong dan trong game
+ui.settings.reduce_shake,Reduce Screen Shake,Giam rung man hinh
+ui.settings.reduce_flashes,Reduce Flashes,Giam nhay sang
+ui.settings.language_pending,Language switching will plug into the translation system later.,Doi ngon ngu se ket noi vao he thong dich sau.
+ui.settings.account_pending,Account linking placeholder for later phase.,O ket noi tai khoan cho giai doan sau.
+ui.map.title,World Map,Ban do the gioi
+ui.map.subtitle,Connected locations, travel events, and blocked routes are represented here.,Cac dia diem ket noi, su kien di chuyen va duong bi chan se nam o day.
+ui.map.node_tavern,Tavern,Quan ruou
+ui.map.node_forest,Whisper Forest,Rung Thi Tham
+ui.map.node_ruins,Old Ruins,Tan tich cu
+ui.map.node_bridge,Broken Bridge,Cau vo
+ui.map.node_castle,Iron Keep,Phao dai sat
+ui.map.node_market,Market,Cua cho
+ui.shop.title,Shop,Cua hang
+ui.shop.subtitle,Item cards use placeholder panels so icons and prices can be data-driven later.,The vat pham dung placeholder de icon va gia co the dieu khien bang data sau.
+ui.shop.potion,Life Tonic,Thuoc sinh menh
+ui.shop.ward,Travel Ward,Bua ho menh
+ui.shop.charm,Luck Charm,Bua may man
+ui.shop.armor,Patch Armor,Giap tam
+ui.shop.map,Region Map,Ban do vung
+ui.shop.key,Rusted Key,Chia khoa gi
+ui.skills.title,Skill Tree,Cay ky nang
+ui.skills.details,Skill Details,Chi tiet ky nang
+ui.skills.cost,Cost: energy / skill point,Gia: nang luong / diem ky nang
+ui.skills.effect,Effect preview area,Vung xem hieu ung
+ui.skills.status,Status icons placeholder,O icon trang thai
+ui.skills.slash,Cleave,Che chem
+ui.skills.guard,Iron Guard,Phong thu sat
+ui.skills.storm,Storm Call,Goi bao
+ui.skills.heal,Renewal,Tai sinh
+ui.skills.tax,Coin Snare,Bay vang
+ui.skills.final,Warlord Oath,Loi the lanh chua
+ui.inventory.title,Inventory,Tui do
+ui.inventory.equipment,Equipment,Trang bi
+ui.inventory.weapon,Weapon slot,O vu khi
+ui.inventory.armor,Armor slot,O giap
+ui.inventory.trinket,Trinket slot,O phu kien
+ui.battle.title,Battle,Tran dau
+ui.battle.retreat,Retreat,Rut lui
+ui.battle.enemy,Enemy,Ke dich
+ui.battle.player,Player,Nguoi choi
+ui.battle.dialogue,Dialogue,Thoai
+ui.battle.dialogue_sample,Enemy battle line placeholder,O cau thoai cua ke dich
+ui.battle.skill_1,Skill 1,Ky nang 1
+ui.battle.skill_2,Skill 2,Ky nang 2
+ui.battle.skill_3,Skill 3,Ky nang 3
+ui.battle.skill_4,Skill 4,Ky nang 4
+ui.battle.new_board,New Board,Ban moi
+ui.battle.board_hint,Tap a tile then an adjacent tile to swap.,Cham mot o roi cham o canh no de doi cho.
+ui.battle.combo,COMBO x{combo},COMBO x{combo}
+ui.battle.failed_swap,Failed swap,Doi cho that bai
+ui.battle.invalid_summary,No match: swap reverted and penalty should trigger.,Khong co match: da hoan doi va se kich hoat phat.
+ui.battle.summary,Combo {combo} | Extra turns +{turns} | A {attack} H {health} G {money} E {energy} XP {experience},Combo {combo} | Luot them +{turns} | A {attack} H {health} G {money} E {energy} XP {experience}
+ui.battle.match3,Match 3,Match 3
+ui.battle.match4,+1 Turn,+1 luot
+ui.battle.match5,Lightning,Set danh
+ui.battle.match_corner,Shockwave,Song xung kich
+ui.character.title,Choose Hero,Chon anh hung
+ui.character.subtitle,Each hero card can later bind to stats, portrait, skills, and skill tree data.,Moi the anh hung sau nay co the gan stats, chan dung, ky nang va cay ky nang.
+ui.character.warlord,Warlord,Lanh chua
+ui.character.oracle,Oracle,Tien tri
+ui.character.raider,Raider,Ke dot kich
+ui.character.choose,Choose,Chon
+ui.about.title,About,Gioi thieu
+ui.about.subtitle,Core screen prototype for the 12 Warlords RPG interface.,Nguyen mau cac man hinh cot loi cho giao dien RPG 12 Warlords.
+ui.about.body,This build focuses on structure: navigation, responsive containers, placeholder art zones, and future data-driven replacement points.,Ban nay tap trung vao cau truc: dieu huong, container responsive, vung asset placeholder va diem thay the bang data sau nay.

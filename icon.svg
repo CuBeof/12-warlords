@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="18" fill="#171518"/>
+  <path d="M24 92L64 18l40 74H24z" fill="#d8aa55"/>
+  <path d="M45 82l19-36 19 36H45z" fill="#242027"/>
+  <text x="64" y="105" text-anchor="middle" font-family="serif" font-size="22" font-weight="700" fill="#eadfce">XII</text>
+</svg>

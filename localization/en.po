@@ -1,0 +1,296 @@
+﻿msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: en\n"
+
+msgid "ui.main.title"
+msgstr "12 Warlords"
+
+msgid "ui.main.subtitle"
+msgstr "Offline match-3 RPG prototype UI with replaceable art slots."
+
+msgid "ui.main.continue"
+msgstr "Continue"
+
+msgid "ui.main.new_game"
+msgstr "New Game"
+
+msgid "ui.main.settings"
+msgstr "Settings"
+
+msgid "ui.main.about"
+msgstr "About"
+
+msgid "ui.main.preview"
+msgstr "Campaign Preview"
+
+msgid "ui.nav.home"
+msgstr "Home"
+
+msgid "ui.nav.map"
+msgstr "Map"
+
+msgid "ui.nav.battle"
+msgstr "Battle"
+
+msgid "ui.nav.inventory"
+msgstr "Inventory"
+
+msgid "ui.nav.skills"
+msgstr "Skills"
+
+msgid "ui.nav.shop"
+msgstr "Shop"
+
+msgid "ui.nav.settings"
+msgstr "Settings"
+
+msgid "ui.nav.about"
+msgstr "About"
+
+msgid "ui.placeholder.map"
+msgstr "Map art placeholder"
+
+msgid "ui.placeholder.hero"
+msgstr "Hero portrait placeholder"
+
+msgid "ui.placeholder.enemy"
+msgstr "Enemy portrait placeholder"
+
+msgid "ui.common.buy"
+msgstr "Buy"
+
+msgid "ui.settings.title"
+msgstr "Settings"
+
+msgid "ui.settings.audio"
+msgstr "Audio"
+
+msgid "ui.settings.ux"
+msgstr "Experience"
+
+msgid "ui.settings.language"
+msgstr "Language & Account"
+
+msgid "ui.settings.audio_master"
+msgstr "Game Audio"
+
+msgid "ui.settings.audio_master_volume"
+msgstr "Game Audio Volume"
+
+msgid "ui.settings.audio_sfx"
+msgstr "Sound Effects"
+
+msgid "ui.settings.audio_sfx_volume"
+msgstr "SFX Volume"
+
+msgid "ui.settings.audio_music"
+msgstr "Background Music"
+
+msgid "ui.settings.audio_music_volume"
+msgstr "Music Volume"
+
+msgid "ui.settings.effect_speed"
+msgstr "Effect Speed"
+
+msgid "ui.settings.show_hints"
+msgstr "Show Hints"
+
+msgid "ui.settings.guidance"
+msgstr "In-game Guidance"
+
+msgid "ui.settings.reduce_shake"
+msgstr "Reduce Screen Shake"
+
+msgid "ui.settings.reduce_flashes"
+msgstr "Reduce Flashes"
+
+msgid "ui.settings.language_pending"
+msgstr "Language switching will plug into the translation system later."
+
+msgid "ui.settings.account_pending"
+msgstr "Account linking placeholder for later phase."
+
+msgid "ui.map.title"
+msgstr "World Map"
+
+msgid "ui.map.subtitle"
+msgstr "Connected locations"
+
+msgid "ui.map.node_tavern"
+msgstr "Tavern"
+
+msgid "ui.map.node_forest"
+msgstr "Whisper Forest"
+
+msgid "ui.map.node_ruins"
+msgstr "Old Ruins"
+
+msgid "ui.map.node_bridge"
+msgstr "Broken Bridge"
+
+msgid "ui.map.node_castle"
+msgstr "Iron Keep"
+
+msgid "ui.map.node_market"
+msgstr "Market"
+
+msgid "ui.shop.title"
+msgstr "Shop"
+
+msgid "ui.shop.subtitle"
+msgstr "Item cards use placeholder panels so icons and prices can be data-driven later."
+
+msgid "ui.shop.potion"
+msgstr "Life Tonic"
+
+msgid "ui.shop.ward"
+msgstr "Travel Ward"
+
+msgid "ui.shop.charm"
+msgstr "Luck Charm"
+
+msgid "ui.shop.armor"
+msgstr "Patch Armor"
+
+msgid "ui.shop.map"
+msgstr "Region Map"
+
+msgid "ui.shop.key"
+msgstr "Rusted Key"
+
+msgid "ui.skills.title"
+msgstr "Skill Tree"
+
+msgid "ui.skills.details"
+msgstr "Skill Details"
+
+msgid "ui.skills.cost"
+msgstr "Cost: energy / skill point"
+
+msgid "ui.skills.effect"
+msgstr "Effect preview area"
+
+msgid "ui.skills.status"
+msgstr "Status icons placeholder"
+
+msgid "ui.skills.slash"
+msgstr "Cleave"
+
+msgid "ui.skills.guard"
+msgstr "Iron Guard"
+
+msgid "ui.skills.storm"
+msgstr "Storm Call"
+
+msgid "ui.skills.heal"
+msgstr "Renewal"
+
+msgid "ui.skills.tax"
+msgstr "Coin Snare"
+
+msgid "ui.skills.final"
+msgstr "Warlord Oath"
+
+msgid "ui.inventory.title"
+msgstr "Inventory"
+
+msgid "ui.inventory.equipment"
+msgstr "Equipment"
+
+msgid "ui.inventory.weapon"
+msgstr "Weapon slot"
+
+msgid "ui.inventory.armor"
+msgstr "Armor slot"
+
+msgid "ui.inventory.trinket"
+msgstr "Trinket slot"
+
+msgid "ui.battle.title"
+msgstr "Battle"
+
+msgid "ui.battle.retreat"
+msgstr "Retreat"
+
+msgid "ui.battle.enemy"
+msgstr "Enemy"
+
+msgid "ui.battle.player"
+msgstr "Player"
+
+msgid "ui.battle.dialogue"
+msgstr "Dialogue"
+
+msgid "ui.battle.dialogue_sample"
+msgstr "Enemy battle line placeholder"
+
+msgid "ui.battle.skill_1"
+msgstr "Skill 1"
+
+msgid "ui.battle.skill_2"
+msgstr "Skill 2"
+
+msgid "ui.battle.skill_3"
+msgstr "Skill 3"
+
+msgid "ui.battle.skill_4"
+msgstr "Skill 4"
+
+msgid "ui.battle.new_board"
+msgstr "New Board"
+
+msgid "ui.battle.board_hint"
+msgstr "Tap a tile then an adjacent tile to swap."
+
+msgid "ui.battle.combo"
+msgstr "COMBO x{combo}"
+
+msgid "ui.battle.failed_swap"
+msgstr "Failed swap"
+
+msgid "ui.battle.invalid_summary"
+msgstr "No match: swap reverted and penalty should trigger."
+
+msgid "ui.battle.summary"
+msgstr "Combo {combo} | Extra turns +{turns} | A {attack} H {health} G {money} E {energy} XP {experience}"
+
+msgid "ui.battle.match3"
+msgstr "Match 3"
+
+msgid "ui.battle.match4"
+msgstr "+1 Turn"
+
+msgid "ui.battle.match5"
+msgstr "Lightning"
+
+msgid "ui.battle.match_corner"
+msgstr "Shockwave"
+
+msgid "ui.character.title"
+msgstr "Choose Hero"
+
+msgid "ui.character.subtitle"
+msgstr "Each hero card can later bind to stats"
+
+msgid "ui.character.warlord"
+msgstr "Warlord"
+
+msgid "ui.character.oracle"
+msgstr "Oracle"
+
+msgid "ui.character.raider"
+msgstr "Raider"
+
+msgid "ui.character.choose"
+msgstr "Choose"
+
+msgid "ui.about.title"
+msgstr "About"
+
+msgid "ui.about.subtitle"
+msgstr "Core screen prototype for the 12 Warlords RPG interface."
+
+msgid "ui.about.body"
+msgstr "This build focuses on structure: navigation"
+

@@ -1,0 +1,296 @@
+﻿msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: vi\n"
+
+msgid "ui.main.title"
+msgstr "12 Lanh Chua"
+
+msgid "ui.main.subtitle"
+msgstr "Nguyen mau UI RPG match-3 offline voi cac o asset co the thay sau."
+
+msgid "ui.main.continue"
+msgstr "Tiep tuc"
+
+msgid "ui.main.new_game"
+msgstr "Game moi"
+
+msgid "ui.main.settings"
+msgstr "Cai dat"
+
+msgid "ui.main.about"
+msgstr "Gioi thieu"
+
+msgid "ui.main.preview"
+msgstr "Xem nhanh chien dich"
+
+msgid "ui.nav.home"
+msgstr "Trang chinh"
+
+msgid "ui.nav.map"
+msgstr "Ban do"
+
+msgid "ui.nav.battle"
+msgstr "Tran dau"
+
+msgid "ui.nav.inventory"
+msgstr "Tui do"
+
+msgid "ui.nav.skills"
+msgstr "Ky nang"
+
+msgid "ui.nav.shop"
+msgstr "Cua hang"
+
+msgid "ui.nav.settings"
+msgstr "Cai dat"
+
+msgid "ui.nav.about"
+msgstr "Gioi thieu"
+
+msgid "ui.placeholder.map"
+msgstr "O thay asset ban do"
+
+msgid "ui.placeholder.hero"
+msgstr "O thay chan dung nhan vat"
+
+msgid "ui.placeholder.enemy"
+msgstr "O thay chan dung ke dich"
+
+msgid "ui.common.buy"
+msgstr "Mua"
+
+msgid "ui.settings.title"
+msgstr "Cai dat"
+
+msgid "ui.settings.audio"
+msgstr "Am thanh"
+
+msgid "ui.settings.ux"
+msgstr "Trai nghiem"
+
+msgid "ui.settings.language"
+msgstr "Ngon ngu & tai khoan"
+
+msgid "ui.settings.audio_master"
+msgstr "Am thanh game"
+
+msgid "ui.settings.audio_master_volume"
+msgstr "Am luong game"
+
+msgid "ui.settings.audio_sfx"
+msgstr "Hieu ung am thanh"
+
+msgid "ui.settings.audio_sfx_volume"
+msgstr "Am luong SFX"
+
+msgid "ui.settings.audio_music"
+msgstr "Nhac nen"
+
+msgid "ui.settings.audio_music_volume"
+msgstr "Am luong nhac"
+
+msgid "ui.settings.effect_speed"
+msgstr "Toc do hieu ung"
+
+msgid "ui.settings.show_hints"
+msgstr "Hien goi y"
+
+msgid "ui.settings.guidance"
+msgstr "Huong dan trong game"
+
+msgid "ui.settings.reduce_shake"
+msgstr "Giam rung man hinh"
+
+msgid "ui.settings.reduce_flashes"
+msgstr "Giam nhay sang"
+
+msgid "ui.settings.language_pending"
+msgstr "Doi ngon ngu se ket noi vao he thong dich sau."
+
+msgid "ui.settings.account_pending"
+msgstr "O ket noi tai khoan cho giai doan sau."
+
+msgid "ui.map.title"
+msgstr "Ban do the gioi"
+
+msgid "ui.map.subtitle"
+msgstr "travel events"
+
+msgid "ui.map.node_tavern"
+msgstr "Quan ruou"
+
+msgid "ui.map.node_forest"
+msgstr "Rung Thi Tham"
+
+msgid "ui.map.node_ruins"
+msgstr "Tan tich cu"
+
+msgid "ui.map.node_bridge"
+msgstr "Cau vo"
+
+msgid "ui.map.node_castle"
+msgstr "Phao dai sat"
+
+msgid "ui.map.node_market"
+msgstr "Cua cho"
+
+msgid "ui.shop.title"
+msgstr "Cua hang"
+
+msgid "ui.shop.subtitle"
+msgstr "The vat pham dung placeholder de icon va gia co the dieu khien bang data sau."
+
+msgid "ui.shop.potion"
+msgstr "Thuoc sinh menh"
+
+msgid "ui.shop.ward"
+msgstr "Bua ho menh"
+
+msgid "ui.shop.charm"
+msgstr "Bua may man"
+
+msgid "ui.shop.armor"
+msgstr "Giap tam"
+
+msgid "ui.shop.map"
+msgstr "Ban do vung"
+
+msgid "ui.shop.key"
+msgstr "Chia khoa gi"
+
+msgid "ui.skills.title"
+msgstr "Cay ky nang"
+
+msgid "ui.skills.details"
+msgstr "Chi tiet ky nang"
+
+msgid "ui.skills.cost"
+msgstr "Gia: nang luong / diem ky nang"
+
+msgid "ui.skills.effect"
+msgstr "Vung xem hieu ung"
+
+msgid "ui.skills.status"
+msgstr "O icon trang thai"
+
+msgid "ui.skills.slash"
+msgstr "Che chem"
+
+msgid "ui.skills.guard"
+msgstr "Phong thu sat"
+
+msgid "ui.skills.storm"
+msgstr "Goi bao"
+
+msgid "ui.skills.heal"
+msgstr "Tai sinh"
+
+msgid "ui.skills.tax"
+msgstr "Bay vang"
+
+msgid "ui.skills.final"
+msgstr "Loi the lanh chua"
+
+msgid "ui.inventory.title"
+msgstr "Tui do"
+
+msgid "ui.inventory.equipment"
+msgstr "Trang bi"
+
+msgid "ui.inventory.weapon"
+msgstr "O vu khi"
+
+msgid "ui.inventory.armor"
+msgstr "O giap"
+
+msgid "ui.inventory.trinket"
+msgstr "O phu kien"
+
+msgid "ui.battle.title"
+msgstr "Tran dau"
+
+msgid "ui.battle.retreat"
+msgstr "Rut lui"
+
+msgid "ui.battle.enemy"
+msgstr "Ke dich"
+
+msgid "ui.battle.player"
+msgstr "Nguoi choi"
+
+msgid "ui.battle.dialogue"
+msgstr "Thoai"
+
+msgid "ui.battle.dialogue_sample"
+msgstr "O cau thoai cua ke dich"
+
+msgid "ui.battle.skill_1"
+msgstr "Ky nang 1"
+
+msgid "ui.battle.skill_2"
+msgstr "Ky nang 2"
+
+msgid "ui.battle.skill_3"
+msgstr "Ky nang 3"
+
+msgid "ui.battle.skill_4"
+msgstr "Ky nang 4"
+
+msgid "ui.battle.new_board"
+msgstr "Ban moi"
+
+msgid "ui.battle.board_hint"
+msgstr "Cham mot o roi cham o canh no de doi cho."
+
+msgid "ui.battle.combo"
+msgstr "COMBO x{combo}"
+
+msgid "ui.battle.failed_swap"
+msgstr "Doi cho that bai"
+
+msgid "ui.battle.invalid_summary"
+msgstr "Khong co match: da hoan doi va se kich hoat phat."
+
+msgid "ui.battle.summary"
+msgstr "Combo {combo} | Luot them +{turns} | A {attack} H {health} G {money} E {energy} XP {experience}"
+
+msgid "ui.battle.match3"
+msgstr "Match 3"
+
+msgid "ui.battle.match4"
+msgstr "+1 luot"
+
+msgid "ui.battle.match5"
+msgstr "Set danh"
+
+msgid "ui.battle.match_corner"
+msgstr "Song xung kich"
+
+msgid "ui.character.title"
+msgstr "Chon anh hung"
+
+msgid "ui.character.subtitle"
+msgstr "portrait"
+
+msgid "ui.character.warlord"
+msgstr "Lanh chua"
+
+msgid "ui.character.oracle"
+msgstr "Tien tri"
+
+msgid "ui.character.raider"
+msgstr "Ke dot kich"
+
+msgid "ui.character.choose"
+msgstr "Chon"
+
+msgid "ui.about.title"
+msgstr "Gioi thieu"
+
+msgid "ui.about.subtitle"
+msgstr "Nguyen mau cac man hinh cot loi cho giao dien RPG 12 Warlords."
+
+msgid "ui.about.body"
+msgstr "responsive containers"
+
