@@ -5,6 +5,22 @@ const BoardModelScript := preload("res://scripts/board/board_model.gd")
 const BoardTileScript := preload("res://scripts/board/tile.gd")
 const BoardTileViewScene := preload("res://scripts/board/board_tile_view.gd")
 
+const SWAP_DURATION := 0.32
+const FAILED_SWAP_READ_DELAY := 0.42
+const MATCH_START_DELAY := 0.42
+const MATCH_STAGGER := 0.045
+const DROP_BASE_DURATION := 0.36
+const DROP_ROW_STAGGER := 0.028
+const REFILL_BASE_DURATION := 0.46
+const REFILL_ROW_STAGGER := 0.035
+const DROP_START_DELAY := 1.0
+const REFILL_START_DELAY := 1.6
+const FINAL_READ_DELAY := 3.0
+const FLOAT_RISE_DURATION := 1.15
+const FLOAT_HOLD_DURATION := 1.15
+const FLOAT_FADE_DURATION := 0.45
+const COMBO_CLEAR_DELAY := 2.0
+
 @export var tile_size: float = 54.0
 @export var tile_gap: float = 5.0
 
@@ -171,7 +187,7 @@ func _on_tiles_swapped(a: Vector2i, b: Vector2i) -> void:
 
 
 func _on_swap_reverted(a: Vector2i, b: Vector2i) -> void:
-	await get_tree().create_timer(0.18).timeout
+	await get_tree().create_timer(FAILED_SWAP_READ_DELAY).timeout
 	_swap_view_entries(a, b)
 	var tween := create_tween().bind_node(self).set_parallel(true)
 	_tween_tile_to(tween, a)
@@ -191,7 +207,7 @@ func _on_match_resolved(groups: Array, combo: int, extra_turns_added: int) -> vo
 			if not _tiles.has(cell):
 				continue
 			var view: Variant = _tiles[cell]
-			view.play_pop(float(index) * 0.018)
+			view.play_pop(MATCH_START_DELAY + float(index) * MATCH_STAGGER)
 		_float_text(_label_for_shape(shape), _center_for_cells(cells), color.lightened(0.2))
 	if extra_turns_added > 0:
 		_float_text(tr("ui.battle.extra_turn"), Vector2(_board_layer.size.x * 0.5, 10), Color("ffd56a"))
@@ -207,15 +223,16 @@ func _on_tiles_dropped(movements: Array) -> void:
 		_tiles.erase(from)
 		_tiles[to] = view
 		view.update_cell(to)
-	var tween := create_tween().bind_node(self).set_parallel(true)
 	for movement in movements:
 		var to_cell: Vector2i = movement[&"to"]
-		_tween_tile_to(tween, to_cell, 0.18 + float(to_cell.y) * 0.012)
-	tween.finished.connect(func() -> void:
-		for movement in movements:
-			var view: Variant = _tiles[movement[&"to"]]
-			view.play_land_bounce()
-	)
+		if not _tiles.has(to_cell):
+			continue
+		var view: Variant = _tiles[to_cell]
+		var tween := create_tween().bind_node(view)
+		tween.tween_interval(DROP_START_DELAY)
+		tween.tween_property(view, "position", _cell_position(to_cell), DROP_BASE_DURATION + float(to_cell.y) * DROP_ROW_STAGGER) \
+			.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+		tween.tween_callback(view.play_land_bounce)
 
 
 func _on_tiles_refilled(spawns: Array) -> void:
@@ -228,17 +245,19 @@ func _on_tiles_refilled(spawns: Array) -> void:
 		_board_layer.add_child(view)
 		_tiles[to_cell] = view
 		var tween := create_tween().bind_node(view)
-		tween.tween_property(view, "position", _cell_position(to_cell), 0.24 + float(to_cell.y) * 0.012) \
+		tween.tween_interval(REFILL_START_DELAY)
+		tween.tween_property(view, "position", _cell_position(to_cell), REFILL_BASE_DURATION + float(to_cell.y) * REFILL_ROW_STAGGER) \
 			.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
 		tween.tween_callback(view.play_land_bounce)
 
 
 func _on_cascade_finished(summary: Dictionary) -> void:
-	await get_tree().create_timer(0.24).timeout
+	await get_tree().create_timer(FINAL_READ_DELAY).timeout
 	_busy = false
-	_combo_label.text = ""
 	if not summary[&"valid"]:
 		_summary_label.text = tr("ui.battle.invalid_summary")
+		await get_tree().create_timer(COMBO_CLEAR_DELAY).timeout
+		_combo_label.text = ""
 		return
 	var values: Dictionary = summary[&"values"]
 	_summary_label.text = tr("ui.battle.summary").format({
@@ -250,6 +269,8 @@ func _on_cascade_finished(summary: Dictionary) -> void:
 		"energy": values[&"energy"],
 		"experience": values[&"experience"]
 	})
+	await get_tree().create_timer(COMBO_CLEAR_DELAY).timeout
+	_combo_label.text = ""
 
 
 func _swap_view_entries(a: Vector2i, b: Vector2i) -> void:
@@ -261,7 +282,7 @@ func _swap_view_entries(a: Vector2i, b: Vector2i) -> void:
 	view_b.update_cell(a)
 
 
-func _tween_tile_to(tween: Tween, cell: Vector2i, duration: float = 0.18) -> void:
+func _tween_tile_to(tween: Tween, cell: Vector2i, duration: float = SWAP_DURATION) -> void:
 	if not _tiles.has(cell):
 		return
 	var view: Variant = _tiles[cell]
@@ -296,9 +317,9 @@ func _float_text(text: String, pos: Vector2, color: Color) -> void:
 	label.add_theme_color_override(&"font_color", color)
 	_fx_layer.add_child(label)
 	var tween := create_tween().bind_node(label).set_parallel(true)
-	tween.tween_property(label, "position:y", pos.y - 48.0, 0.55) \
+	tween.tween_property(label, "position:y", pos.y - 58.0, FLOAT_RISE_DURATION) \
 		.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	tween.tween_property(label, "modulate:a", 0.0, 0.3).set_delay(0.25)
+	tween.tween_property(label, "modulate:a", 0.0, FLOAT_FADE_DURATION).set_delay(FLOAT_HOLD_DURATION)
 	tween.chain().tween_callback(label.queue_free)
 
 

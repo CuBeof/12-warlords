@@ -13,6 +13,14 @@ var _tween: Tween
 var _touch_start := Vector2.ZERO
 var _swipe_sent := false
 
+const SELECT_DURATION := 0.16
+const POP_ANTICIPATION_DURATION := 0.18
+const POP_VANISH_DURATION := 0.22
+const SPAWN_FADE_DURATION := 0.34
+const SPAWN_SCALE_DURATION := 0.42
+const LAND_SQUASH_DURATION := 0.12
+const LAND_SETTLE_DURATION := 0.28
+
 
 func _ready() -> void:
 	focus_mode = Control.FOCUS_NONE
@@ -60,7 +68,7 @@ func set_selected(selected: bool) -> void:
 	if _tween:
 		_tween.kill()
 	_tween = create_tween().bind_node(self)
-	_tween.tween_property(self, "scale", Vector2.ONE * (1.08 if selected else 1.0), 0.11) \
+	_tween.tween_property(self, "scale", Vector2.ONE * (1.08 if selected else 1.0), SELECT_DURATION) \
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
 
@@ -69,9 +77,9 @@ func play_pop(delay: float = 0.0) -> void:
 		_tween.kill()
 	_tween = create_tween().bind_node(self)
 	_tween.tween_interval(delay)
-	_tween.tween_property(self, "scale", Vector2.ONE * 1.22, 0.08) \
+	_tween.tween_property(self, "scale", Vector2.ONE * 1.26, POP_ANTICIPATION_DURATION) \
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	_tween.tween_property(self, "scale", Vector2.ZERO, 0.1) \
+	_tween.tween_property(self, "scale", Vector2.ZERO, POP_VANISH_DURATION) \
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 	_tween.tween_callback(queue_free)
 
@@ -82,8 +90,8 @@ func play_spawn() -> void:
 	if _tween:
 		_tween.kill()
 	_tween = create_tween().bind_node(self).set_parallel(true)
-	_tween.tween_property(self, "modulate:a", 1.0, 0.16)
-	_tween.tween_property(self, "scale", Vector2.ONE, 0.18) \
+	_tween.tween_property(self, "modulate:a", 1.0, SPAWN_FADE_DURATION)
+	_tween.tween_property(self, "scale", Vector2.ONE, SPAWN_SCALE_DURATION) \
 		.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 
 
@@ -91,9 +99,9 @@ func play_land_bounce() -> void:
 	if _tween:
 		_tween.kill()
 	_tween = create_tween().bind_node(self)
-	_tween.tween_property(self, "scale", Vector2(1.14, 0.86), 0.06) \
+	_tween.tween_property(self, "scale", Vector2(1.14, 0.86), LAND_SQUASH_DURATION) \
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	_tween.tween_property(self, "scale", _base_scale, 0.16) \
+	_tween.tween_property(self, "scale", _base_scale, LAND_SETTLE_DURATION) \
 		.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 
 
